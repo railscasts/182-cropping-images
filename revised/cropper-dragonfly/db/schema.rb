@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(:version => 20111201194630) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
-    t.string   "avatar"
+    t.string   "avatar_image_name"
+    t.string   "avatar_image_uid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

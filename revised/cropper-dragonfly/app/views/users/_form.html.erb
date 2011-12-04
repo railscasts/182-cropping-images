@@ -15,8 +15,12 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :avatar %><br />
-    <%= f.file_field :avatar %>
+    <%= f.label :avatar_image %><br />
+    <%= f.file_field :avatar_image %><br />
+    <%= f.hidden_field :retained_avatar_image %>
+    <%= image_tag @user.avatar_thumb.url if @user.avatar_image %><br />
+    <%= f.label :remove_avatar_image if @user.avatar_image %>
+    <%= f.check_box :remove_avatar_image if @user.avatar_image %>
   </div>
   <div class="actions">
     <%= f.submit %>

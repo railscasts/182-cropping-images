@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      if params[:user][:avatar].present?
+      if params[:user][:avatar_image]
         render :crop
       else
         redirect_to @user, notice: "Successfully created user."
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      if params[:user][:avatar].present?
+      if params[:user][:avatar_image]
         render :crop
       else
         redirect_to @user, notice: "Successfully updated user."
